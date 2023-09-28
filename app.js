@@ -1,0 +1,45 @@
+const express = require("express")
+const port = 5000;
+const path = require("path")
+const app = express();
+
+
+const Proj1 = require("./Router/Proj1.js")
+const Proj2 = require("./Router/Proj2.js")
+const Proj3 = require("./Router/Proj3.js")
+const Proj4 = require("./Router/Proj4.js")
+const Proj5 = require("./Router/Proj5.js")
+const Proj6 = require("./Router/Proj6.js")
+const Proj7 = require("./Router/Proj7.js")
+const Proj8 = require("./Router/Proj8.js")
+const Proj9 = require("./Router/Proj9.js")
+const Proj10 = require("./Router/Proj10.js")
+const Proj11 = require("./Router/Proj11.js")
+const Proj12 = require("./Router/Proj12.js")
+const Proj13 = require("./Router/Proj13.js")
+const Proj14 = require("./Router/Proj14.js")
+const Proj15= require("./Router/Proj15.js")
+const Proj16 = require("./Router/Proj16.js")
+app.use("/Clock",Proj1)
+app.use("/multiplicationApp",Proj2)
+app.use("/ButtonEffects",Proj3)
+app.use("/RealTimeCharacter",Proj4)
+app.use("/StickyNavBar",Proj5)
+app.use("/RandomColor",Proj6)
+app.use("/HeartTrail",Proj7)
+app.use("/VideoTrailer",Proj8)
+app.use("/BlurBackground",Proj9)
+app.use("/BackgroundImage",Proj10)
+app.use("/DrumKits",Proj11)
+app.use("/RandomPhotots",Proj12)
+app.use("/ImageSlider",Proj13)
+app.use("/DarkMode",Proj14)
+app.use("/AutoTextEffect",Proj15)
+app.use("/Tabs",Proj16)
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./index.html"))
+})
+
+app.listen(port,()=>{
+    console.log("server is working");
+})

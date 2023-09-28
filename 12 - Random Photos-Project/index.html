@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Photos</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: brown;
+}
+
+.image-container{
+    text-align: center;
+}
+
+.image-container img{
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    background-color: gray;
+    width: 300px;
+    height: 300px;
+}
+
+.btn{
+    background-color: slateblue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="https://picsum.photos/300/300?random=1">
+        <img src="https://picsum.photos/300/300?random=2">
+        <img src="https://picsum.photos/300/300?random=3">
+    </div>
+    <button class="btn">Load More</button>
+
+<script>
+    const imageContainerEl = document.querySelector(".image-container");
+
+const btnEl = document.querySelector(".btn");
+
+btnEl.addEventListener("click",()=>{
+     imageNum = 10;
+     addNewImages();
+});
+
+function addNewImages() {
+    for (let index = 0; index < imageNum; index++) {
+      const newImgEl = document.createElement("img");
+      newImgEl.src = `https://picsum.photos/300?random=${Math.floor(
+        Math.random() * 2000
+      )}`;
+      imageContainerEl.appendChild(newImgEl);
+    }
+  }
+   
+
+</script>
+    <!-- <script src="./js/script.js"></script> -->
+
+</body>
+
+</html>
